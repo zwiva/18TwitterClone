@@ -1,5 +1,9 @@
-<h1>New Tweet</h1>
 
-<%= render 'form', tweet: @tweet %>
+<div class='container'>
 
-<%= link_to 'Back', tweets_path %>
+<h1 class='font-weight-bold text-info'>New Tweet</h1>
+
+<%= render 'form', tweet: @tweet, class: 'btn btn-info'%>
+<br>
+<%= link_to 'Back', tweets_path, class: 'btn btn-info'%>
+</div>

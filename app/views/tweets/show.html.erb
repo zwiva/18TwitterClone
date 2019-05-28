@@ -1,9 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+<div class='container'>
+
+<h1 class= 'font-weight-bold text-info'>Tweet <%=@tweet.id %></h1>
+
+<p>
+  <strong>Id:</strong>
+  <%= @tweet.id %>
+</p>
+
+<p>
+  <strong>Title</strong>
+  <%= @tweet.title%>
+</p>
+
 <p>
   <strong>Content:</strong>
   <%= @tweet.content %>
 </p>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+<p>
+  <strong>Fecha creación: </strong>
+  <%= @tweet.created_at %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_tweet_path(@tweet), class: 'btn btn-info' %> |
+<%= link_to 'Back', tweets_path, class: 'btn btn-info' %>
+</div>

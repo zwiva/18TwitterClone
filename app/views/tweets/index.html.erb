@@ -1,27 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tweets</h1>
+<div class='container'>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @tweets.each do |tweet| %>
-      <tr>
-        <td><%= tweet.content %></td>
-        <td><%= link_to 'Show', tweet %></td>
-        <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <div class='col'>
+      <div class="card border-info mb-3">
+                   
+          <div class="card-header bg-info text-white font-weight-bold">
+            <%=tweet.title%>
+          </div>
+          
+          <div class="card-body text-secondary">
+              <div class="card col-md-9">
+                  <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text"><%=tweet.content%></p>   
+                  </div>
+              </div>
+            <br>          
+            <%= link_to 'Show', tweet, class:'btn btn-info text-right' %>
+            <%= link_to 'Edit', edit_tweet_path(tweet), class: 'btn btn-info text-right' %>
+            <%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-info text-right' %>
+          </div>
+      </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+</div>
 <br>
 
-<%= link_to 'New Tweet', new_tweet_path %>
+
